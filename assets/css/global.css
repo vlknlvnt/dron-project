@@ -1,0 +1,21 @@
+:root {
+    --text-light: #c7c7c7;
+    --line-light: #dfdfdf;
+    --bg-light: #efefef;
+    --anagenelopacity: #647c8b;
+    --white: #ffffff;
+    --main-color: #f49c24;
+    --text-mid: #707070;
+    --line-mid: #707070;
+    --bg-dark: #3b3e40;
+    --text-dark: #3b3e40;
+}
+
+a, p {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 22px;
+}
+
+a {
+    font-weight: 400;
+}

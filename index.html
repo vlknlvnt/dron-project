@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dron-akademi</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,100&display=swap');
+
+        /* navbar başladı */
+        nav {
+            background-color: var(--bg-dark);
+            height: auto;
+        }
+
+        .nav-brand {
+            padding-left: 6.25rem;
+            padding-top: 1.938rem;
+            padding-bottom: 2.063rem;            
+        }
+
+        .logo {
+            width:10.125rem;
+        }
+
+        .nav-list {
+            gap: 2.438rem; /* nav item arasındaki boşluklar sabit olsun */
+        }
+
+        .nav-list-item {
+            color: var(--white);
+            font-size: 1.25rem;
+            padding-top: 3.625rem;
+        }
+
+        .nav-list-item:hover {
+            color: var(--main-color);
+        }
+
+        .nav-search-main {
+            margin-top: 3.125rem;
+            margin-bottom: 1.813rem;
+            margin-right: 6.375rem;    
+            margin-left: 39px;        
+        }
+
+        .nav-search {
+            gap: 0.938rem;
+            border: 1px var(--main-color) solid;
+            transition: 0.3s;
+            border-radius: 1.5rem;
+            padding: 0.625rem 1.938rem;
+        }
+
+        .form-control {
+            width: 3.75rem;
+            color: var(--main-color);
+            background-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.125rem;
+        }
+
+        .form-control::placeholder {
+            color: var(--main-color);
+        }
+
+        .nav-search:hover {
+            border-color: white;
+        }
+
+        .nav-search:hover .form-control {
+            color: white;
+        }
+
+        .nav-search:hover  .form-control::placeholder {
+            color: white;
+        }        
+        /* navbar bitti */
+
+        /* responsive başladı */
+
+        
+        @media only screen and (max-width: 1440px) {
+            /* navbar başladı */    
+            .nav-brand {
+            padding-left: 1.25rem;
+            }
+            .nav-list {
+                gap: 1.438rem;
+            }
+            .nav-list-item {
+                font-size: 1rem;
+            }
+            .nav-search-main {
+            margin-right: 1rem;
+            }
+            /* navbar bitti */    
+        }
+        @media only screen and (max-width: 992px) {
+            /* navbar başladı */
+
+            /* navbar bitti */
+        }
+        
+        /* responsive bitti */
+    </style>
+</head>
+<body>
+    <nav class="d-flex flex-row">
+
+            <div class="nav-brand">
+                <img class="logo" src="assets/images/logo.png" alt="">
+            </div>
+            <div class="nav-list-main w-100" id="navbarContent">
+                <ul class="nav-list d-flex flex-row justify-content-right">
+                    <li class="nav-list-item"><a href="">HAKKIMIZDA</a></li>
+                    <li class="nav-list-item"><a href="">EĞİTİMLERİMİZ</a></li>
+                    <li class="nav-list-item"><a href="">AKADEMİK KADRO</a></li>
+                    <li class="nav-list-item"><a href="">S.S.S</a></li>
+                    <li class="nav-list-item"><a href="">İLETİŞİM</a></li>
+                </ul>
+            </div>
+            <div class="nav-search-main">
+                <div class="nav-search input-group d-flex align-items-center">
+                    <img src="assets/images/zoom-2.png" alt=""> <input type="text" class="form-control text-center" aria-label="Arama" placeholder="Arama">
+                </div>                
+            </div>
+
+
+    </nav>
+
+
+</body>
+</html>
