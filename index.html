@@ -14,16 +14,32 @@
         nav {
             background-color: var(--bg-dark);
             height: auto;
+            flex-direction: row;
         }
 
-        .nav-brand {
+        .nav-mobile-top {
             padding-left: 6.25rem;
             padding-top: 1.938rem;
-            padding-bottom: 2.063rem;            
+            padding-bottom: 2.063rem;    
+            order: 1;
+            background-color: var(--bg-dark);        
+        }
+
+        .nav-desktop-view {
+            margin-top: 0;
         }
 
         .logo {
             width:10.125rem;
+        }
+
+        .nav-toggle {
+            padding-right: 1rem;
+        }
+
+        .nav-list-main {
+            order: 2;
+            height: 100%;
         }
 
         .nav-list {
@@ -41,10 +57,11 @@
         }
 
         .nav-search-main {
-            margin-top: 3.125rem;
-            margin-bottom: 1.813rem;
-            margin-right: 6.375rem;    
-            margin-left: 39px;        
+            padding-top: 3.125rem;
+            padding-bottom: 1.813rem;
+            padding-right: 6.375rem;    
+            padding-left: 39px;    
+            order: 3;    
         }
 
         .nav-search {
@@ -77,7 +94,30 @@
 
         .nav-search:hover  .form-control::placeholder {
             color: white;
-        }        
+        }     
+        
+        .nav-social-media {
+            background-color: var(--main-color);
+            padding: 0.75rem 0;
+        }
+
+        .social-media-icons {
+            gap: 1.25rem;
+            transition: 0.5s;
+        }
+
+        .sm-icon:hover {
+            opacity: 0.3;
+        }
+
+        .nav-contact {
+            margin: 1.25rem 0;
+            gap: 1rem;
+        }
+
+        .contact-number {
+            color: white;
+        }
         /* navbar bitti */
 
         /* responsive başladı */
@@ -85,7 +125,7 @@
         
         @media only screen and (max-width: 1440px) {
             /* navbar başladı */    
-            .nav-brand {
+            .nav-mobile-top {
             padding-left: 1.25rem;
             }
             .nav-list {
@@ -95,12 +135,106 @@
                 font-size: 1rem;
             }
             .nav-search-main {
-            margin-right: 1rem;
+                padding-right: 1.375rem;
             }
             /* navbar bitti */    
         }
         @media only screen and (max-width: 992px) {
             /* navbar başladı */
+            nav {
+                flex-direction: column;
+                font-size: 1.125rem;
+            }
+            .nav-mobile-view  {
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 99;
+            }
+            .nav-mobile-bottom {
+                flex-direction: column;
+            }
+            .nav-list-main {
+                background-color: var(--main-color);
+                order: 3;
+            }
+            .nav-list {
+                flex-direction: column;
+                padding: 3.125rem;
+                gap: 2.5rem;
+            }     
+            .nav-list-item {
+                font-size: 1.5;
+                padding-top: 0;
+                font-weight: 600;
+            }  
+            .nav-list-item:hover {
+                color: var(--text-mid);
+            }                 
+            .nav-search-main {
+                order: 2;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }            
+            .nav-search {
+                background-color: var(--bg-light);
+                border: none;
+                color: var(--bg-dark);
+                padding: 1.18rem;
+                border-radius: 0;
+            }
+            .form-control {
+                width: auto;
+                color: var(--bg-dark)
+            }
+            .nav-search:hover .form-control {
+                color: var(--bg-dark);
+            }
+            .form-control::placeholder {
+                color: var(--bg-dark);
+            }
+            .nav-search:hover .form-control::placeholder {
+                color: var(--bg-dark);
+            } 
+            .nav-toggle-open {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                z-index: 99;
+                margin-top: -100%;
+                animation-name: navbarSlideUp;
+                animation-duration: 0.5s;
+            }
+            @keyframes navbarSlideUp {
+                from {
+                    margin-top: 0%;
+                }
+
+                to {
+                    margin-top: -100%;
+                }
+            }
+
+            .nav-toggle-close {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-top: 0;
+                animation-name: navbarSlideDown;
+                animation-duration: 0.5s;
+            }   
+            
+            @keyframes navbarSlideDown {
+                from {
+                    margin-top: -100%;
+                }
+
+                to {
+                    margin-top: 0;
+                }
+            }
 
             /* navbar bitti */
         }
@@ -109,29 +243,71 @@
     </style>
 </head>
 <body>
-    <nav class="d-flex flex-row">
+    <nav class="w-100 d-flex justify-content-between">
 
+        <div class="nav-mobile-top w-100 nav-desktop-view d-flex justify-content-between align-items-center order-1">
             <div class="nav-brand">
                 <img class="logo" src="assets/images/logo.png" alt="">
+            </div>     
+            <div class="nav-toggle d-lg-none">
+                <a href="#" onclick="toggleNav()" class="nav-toggle-btn"><img src="assets/icons/ic_menu_48px.png" alt=""></a>
+            </div>       
+        </div>
+
+        <div class="nav-mobile-bottom w-100 nav-mobile-view nav-toggle-open d-flex justify-content-between align-items-center order-2" id="nav-mobile-view">
+            <div class="nav-mobile-top d-lg-none d-flex justify-content-between align-items-center order-2">
+                <div class="nav-brand">
+                    <img class="logo" src="assets/images/logo.png" alt="">
+                </div>     
+                <div class="nav-toggle">
+                    <a href="#" onclick="toggleNav()" class="nav-toggle-btn"><img src="assets/icons/ic_close_48px.png" alt=""></a>
+                </div>       
             </div>
-            <div class="nav-list-main w-100" id="navbarContent">
-                <ul class="nav-list d-flex flex-row justify-content-right">
-                    <li class="nav-list-item"><a href="">HAKKIMIZDA</a></li>
-                    <li class="nav-list-item"><a href="">EĞİTİMLERİMİZ</a></li>
-                    <li class="nav-list-item"><a href="">AKADEMİK KADRO</a></li>
-                    <li class="nav-list-item"><a href="">S.S.S</a></li>
-                    <li class="nav-list-item"><a href="">İLETİŞİM</a></li>
-                </ul>
+            <div class="nav-list-main w-100">
+                    <ul class="nav-list d-flex flex-lg-row justify-content-right text-center">
+                        <li class="nav-list-item"><a href="">HAKKIMIZDA</a></li>
+                        <li class="nav-list-item"><a href="">EĞİTİMLERİMİZ</a></li>
+                        <li class="nav-list-item"><a href="">AKADEMİK KADRO</a></li>
+                        <li class="nav-list-item"><a href="">S.S.S</a></li>
+                        <li class="nav-list-item"><a href="">İLETİŞİM</a></li>
+                    </ul>
             </div>
             <div class="nav-search-main">
-                <div class="nav-search input-group d-flex align-items-center">
-                    <img src="assets/images/zoom-2.png" alt=""> <input type="text" class="form-control text-center" aria-label="Arama" placeholder="Arama">
-                </div>                
+                    <div class="nav-search input-group d-flex align-items-center">
+                        <img src="assets/images/zoom-2.png" alt=""> <input type="text" class="form-control text-center" aria-label="Arama" placeholder="Arama">
+                    </div>                
             </div>
-
+            <div class="nav-social-media w-100 d-lg-none order-4">
+                <div class="social-media-icons d-flex flex-row justify-content-center">
+                    <div class="facebook-icon sm-icon"><a href=""><img src="assets/images/facebook.png" alt=""></a></div>
+                    <div class="instagram-icon sm-icon"><a href=""><img src="assets/images/instagram.png" alt=""></a></div>
+                    <div class="youtube-icon sm-icon"><a href=""><img src="assets/images/youtube.png" alt=""></a></div>
+                </div>
+                <div class="nav-contact d-flex flex-row justify-content-center">
+                    <img src="assets/images/phone.png" alt="">
+                    <p class="contact-number">0850 532 87 97</p>
+                </div>
+            </div>            
+        </div>
 
     </nav>
 
 
+    <script>
+
+        /* nav toggle düzenleme başladı */
+
+        function toggleNav () {
+            var navBottom = document.getElementById('nav-mobile-view');
+            navBottom.classList.toggle('nav-toggle-close');
+            navBottom.classList.toggle('nav-toggle-open');
+        }
+        
+                
+
+
+        /* nav toggle düzenleme bitti */
+
+    </script>
 </body>
 </html>
