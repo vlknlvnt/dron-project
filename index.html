@@ -10,242 +10,113 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,100&display=swap');
 
-        /* navbar başladı */
-        nav {
-            background-color: var(--bg-dark);
-            height: auto;
-            flex-direction: row;
+        /* banner section başladı */
+        .banner {
+            height: 31.25rem;
+            background-image: url('assets/images/banner-bg.png');
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .nav-mobile-top {
-            padding-left: 6.25rem;
-            padding-top: 1.938rem;
-            padding-bottom: 2.063rem;    
-            order: 1;
-            background-color: var(--bg-dark);        
+        .about {
+            width: 23.375rem;
+            padding-bottom: 15px;
         }
 
-        .nav-desktop-view {
-            margin-top: 0;
-        }
-
-        .logo {
-            width:10.125rem;
-        }
-
-        .nav-toggle {
-            padding-right: 1rem;
-        }
-
-        .nav-list-main {
-            order: 2;
-            height: 100%;
-        }
-
-        .nav-list {
-            gap: 2.438rem; /* nav item arasındaki boşluklar sabit olsun */
-        }
-
-        .nav-list-item {
-            color: var(--white);
-            font-size: 1.25rem;
-            padding-top: 3.625rem;
-        }
-
-        .nav-list-item:hover {
-            color: var(--main-color);
-        }
-
-        .nav-search-main {
-            padding-top: 3.125rem;
-            padding-bottom: 1.813rem;
-            padding-right: 6.375rem;    
-            padding-left: 39px;    
-            order: 3;    
-        }
-
-        .nav-search {
-            gap: 0.938rem;
-            border: 1px var(--main-color) solid;
-            transition: 0.3s;
-            border-radius: 1.5rem;
-            padding: 0.625rem 1.938rem;
-        }
-
-        .form-control {
-            width: 3.75rem;
-            color: var(--main-color);
-            background-color: transparent;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.125rem;
-        }
-
-        .form-control::placeholder {
-            color: var(--main-color);
-        }
-
-        .nav-search:hover {
-            border-color: white;
-        }
-
-        .nav-search:hover .form-control {
+        .about-text {
+            font-size: 3.75rem;
             color: white;
+            position: relative;   
+            padding-bottom: 1rem;         
         }
 
-        .nav-search:hover  .form-control::placeholder {
-            color: white;
-        }     
-        
-        .nav-social-media {
+        .about-text::after {
+            width: 200px;
             background-color: var(--main-color);
-            padding: 0.75rem 0;
+            height: 10px;
+            border-radius: 10px;
+            content: "";
+            position: absolute;
+            left: 5.5rem;
+            bottom: 0;
         }
+        /* banner section bitti */
 
-        .social-media-icons {
-            gap: 1.25rem;
-            transition: 0.5s;
+        /* content section başladı */
+        .content-section {
+            padding: 100px 0;
         }
-
-        .sm-icon:hover {
-            opacity: 0.3;
+        .content-title {
+            font-size: 30px;
+            padding-bottom: 5px;
+            position: relative;
         }
-
-        .nav-contact {
-            margin: 1.25rem 0;
-            gap: 1rem;
+        .content-text {
+            padding-top: 20px;
+            font-size: 18px;
         }
-
-        .contact-number {
-            color: white;
+        .content-bg {
+            padding: 0 50px;
         }
-        /* navbar bitti */
-
-        /* responsive başladı */
-
-        
-        @media only screen and (max-width: 1440px) {
-            /* navbar başladı */    
-            .nav-mobile-top {
-            padding-left: 1.25rem;
-            }
-            .nav-list {
-                gap: 1.438rem;
-            }
-            .nav-list-item {
-                font-size: 1rem;
-            }
-            .nav-search-main {
-                padding-right: 1.375rem;
-            }
-            /* navbar bitti */    
+        .content-4 {
+            position: relative;
+            margin-top: 106px;
         }
-        @media only screen and (max-width: 992px) {
-            /* navbar başladı */
-            nav {
-                flex-direction: column;
-                font-size: 1.125rem;
-            }
-            .nav-mobile-view  {
-                position: absolute;
-                top: 0;
-                right: 0;
-                z-index: 99;
-            }
-            .nav-mobile-bottom {
-                flex-direction: column;
-            }
-            .nav-list-main {
-                background-color: var(--main-color);
-                order: 3;
-            }
-            .nav-list {
-                flex-direction: column;
-                padding: 3.125rem;
-                gap: 2.5rem;
-            }     
-            .nav-list-item {
-                font-size: 1.5;
-                padding-top: 0;
-                font-weight: 600;
-            }  
-            .nav-list-item:hover {
-                color: var(--text-mid);
-            }                 
-            .nav-search-main {
-                order: 2;
-                margin: 0;
-                padding: 0;
-                width: 100%;
-            }            
-            .nav-search {
-                background-color: var(--bg-light);
-                border: none;
-                color: var(--bg-dark);
-                padding: 1.18rem;
-                border-radius: 0;
-            }
-            .form-control {
-                width: auto;
-                color: var(--bg-dark)
-            }
-            .nav-search:hover .form-control {
-                color: var(--bg-dark);
-            }
-            .form-control::placeholder {
-                color: var(--bg-dark);
-            }
-            .nav-search:hover .form-control::placeholder {
-                color: var(--bg-dark);
-            } 
-            .nav-toggle-open {
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 100%;
-                z-index: 99;
-                margin-top: -100%;
-                animation-name: navbarSlideUp;
-                animation-duration: 0.5s;
-            }
-            @keyframes navbarSlideUp {
-                from {
-                    margin-top: 0%;
-                }
-
-                to {
-                    margin-top: -100%;
-                }
-            }
-
-            .nav-toggle-close {
-                position: absolute;
-                top: 0;
-                right: 0;
-                margin-top: 0;
-                animation-name: navbarSlideDown;
-                animation-duration: 0.5s;
-            }   
-            
-            @keyframes navbarSlideDown {
-                from {
-                    margin-top: -100%;
-                }
-
-                to {
-                    margin-top: 0;
-                }
-            }
-
-            /* navbar bitti */
+        .image-1 {
+            width: 100%;
+            left: 50%;
+            position: relative;
+            z-index: 99;
+            margin-bottom: -230px;
+            transform: translateX(-50%);
+            z-index: 2;
         }
-        
-        /* responsive bitti */
+        .cloud-1 {
+            position: absolute;
+            z-index: 1;
+            top: -160px;
+            left: -170px;
+            width: 100%;
+        }
+        .cloud-2 {
+            width: 100%;
+            position: absolute;
+            right: -180px;
+            top: -30px;
+            z-index: 3;   
+        }
+        .image-2 {
+            position: relative;
+            height: 400px;
+            z-index: 99;
+            margin-bottom: -230px;
+            transform: translateX(-4%);
+        }
+        .bg-1 {
+            width: 655px;
+            height: auto;
+        }
+        .bg-1-inner {
+            background-color: var(--main-color);
+            height: 260px;            
+        }
+        .bg-2 {
+            width: 655px;
+            height: auto;
+        }
+        .bg-2-inner {
+            background-color: var(--main-color);
+            height: 260px;
+        }
+        /* content section bitti */
+
     </style>
 </head>
 <body>
-    <nav class="w-100 d-flex justify-content-between">
+    <!-- navigation başladı -->
+    <nav class="w-100 d-flex justify-content-center">
 
-        <div class="nav-mobile-top w-100 nav-desktop-view d-flex justify-content-between align-items-center order-1">
+        <div class="nav-mobile-top w-60 nav-desktop-view d-flex justify-content-between align-items-center order-1">
             <div class="nav-brand">
                 <img class="logo" src="assets/images/logo.png" alt="">
             </div>     
@@ -254,8 +125,8 @@
             </div>       
         </div>
 
-        <div class="nav-mobile-bottom w-100 nav-mobile-view nav-toggle-open d-flex justify-content-between align-items-center order-2" id="nav-mobile-view">
-            <div class="nav-mobile-top d-lg-none d-flex justify-content-between align-items-center order-2">
+        <div class="nav-mobile-bottom w-100 nav-mobile-view d-flex justify-content-between align-items-center order-2" id="nav-mobile-view">
+            <div class="nav-mobile-top w-100 d-lg-none d-flex justify-content-between align-items-center order-2">
                 <div class="nav-brand">
                     <img class="logo" src="assets/images/logo.png" alt="">
                 </div>     
@@ -291,7 +162,60 @@
         </div>
 
     </nav>
+    <!-- navigation bitti -->
 
+    <!-- banner başladı -->
+    <section class="banner w-100 d-flex justify-content-center align-items-center flex-column">
+        <div class="about text-center">
+            <h1 class="about-text">Hakkımızda</h1>
+        </div>
+    </section>
+    <!-- banner bitti -->
+
+    <!-- content section başladı -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="content-1 col-lg-6 content-image-main">
+                    <div class="content-image-wrapper col-12" style="position: relative">
+                        <img class="content-image image-1" src="assets/images/drone-1.png" alt="">
+                        <img src="assets/images/cloud-1.png" alt="" class="cloud-1 cloud-img">
+                        <img src="assets/images/cloud-2.png" alt="" class="cloud-2 cloud-img">
+                    </div>
+                    <div class="content-bg bg-1 col-12">
+                        <div class="bg-1-inner w-100"></div>
+                    </div>    
+                </div>
+                <div class="content-2 col-lg-6 content-text-main">
+                    <div class="content-text-inner text-left col-12">
+                        <h3 class="content-title">Başlık</h3>
+                        <p class="content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-3 col-lg-6 content-text-main">
+                    <div class="content-text-inner text-left col-12">
+                        <h3 class="content-title">Başlık</h3>
+                        <p class="content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-4 col-lg-6">
+                    <div class="row">
+                        <div class="content-image-wrapper col-12">
+                            <img class="content-image image-2" src="assets/images/drone-2.png" alt="">
+                        </div>
+                        <div class="content-bg bg-2 col-12">
+                            <div class="bg-2-inner w-100"></div>
+                        </div>                        
+                    </div>
+
+                </div>                
+            </div>
+        </div>
+
+    </section>
+    <!-- content section bitti -->
 
     <script>
 
@@ -299,11 +223,15 @@
 
         function toggleNav () {
             var navBottom = document.getElementById('nav-mobile-view');
+            console.log('btn worx');
             navBottom.classList.toggle('nav-toggle-close');
-            navBottom.classList.toggle('nav-toggle-open');
         }
-        
-                
+            /*if (navBottom.className.match("nav-mobile-view")) {
+                navBottom.classList.add("nav-toggle-open");
+            } else {
+                navBottom.classList.remove("nav-toggle-open");
+                navBottom.classList.add("nav-toggle-close")                
+            }*/
 
 
         /* nav toggle düzenleme bitti */

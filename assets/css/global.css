@@ -11,15 +11,218 @@
     --text-dark: #3b3e40;
 }
 
-a, p {
+h1, h3, a, p {
     font-family: 'Montserrat', sans-serif;
-    line-height: 22px;
 }
 
 a {
     font-weight: 400;
 }
 
-.sm-icons {
-    
+/* navbar başladı */
+nav {
+    background-color: var(--bg-dark);
+    height: auto;
+    flex-direction: row;
 }
+
+.nav-mobile-top {
+    padding-left: 6.25rem;
+    padding-top: 1.938rem;
+    padding-bottom: 2.063rem;    
+    order: 1;
+    background-color: var(--bg-dark);        
+}
+
+.nav-desktop-view {
+    margin-top: 0;
+}
+
+.logo {
+    width:10.125rem;
+}
+
+.nav-toggle {
+    padding-right: 1rem;
+}
+
+.nav-list-main {
+    order: 2;
+    height: 100%;
+}
+
+.nav-list {
+    gap: 2.438rem; /* nav item arasındaki boşluklar sabit olsun */
+}
+
+.nav-list-item {
+    color: var(--white);
+    font-size: 1.25rem;
+    padding-top: 3.625rem;
+}
+
+.nav-list-item:hover {
+    color: var(--main-color);
+}
+
+.nav-search-main {
+    padding-top: 3.125rem;
+    padding-bottom: 1.813rem;
+    padding-right: 6.375rem;    
+    padding-left: 39px;    
+    order: 3;    
+}
+
+.nav-search {
+    gap: 0.938rem;
+    border: 1px var(--main-color) solid;
+    transition: 0.3s;
+    border-radius: 1.5rem;
+    padding: 0.625rem 1.938rem;
+}
+
+.form-control {
+    width: 3.75rem;
+    color: var(--main-color);
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+}
+
+.form-control::placeholder {
+    color: var(--main-color);
+}
+
+.nav-search:hover {
+     border-color: white;
+}
+
+.nav-search:hover .form-control {
+    color: white;
+}
+
+.nav-search:hover  .form-control::placeholder {
+    color: white;
+}     
+        
+.nav-social-media {
+    background-color: var(--main-color);
+    padding: 0.75rem 0;
+}
+
+.social-media-icons {
+    gap: 1.25rem;
+    transition: 0.5s;
+}
+
+.sm-icon:hover {
+    opacity: 0.3;
+}
+
+.nav-contact {
+    margin: 1.25rem 0;
+    gap: 1rem;
+}
+
+.contact-number {
+    color: white;
+}
+/* navbar bitti */
+
+
+/* responsive başladı */
+        
+@media only screen and (max-width: 1440px) {
+    /* navbar başladı */    
+    .nav-mobile-top {
+        padding-left: 1.25rem;
+    }
+    .nav-list {
+        gap: 1.438rem;
+    }
+    .nav-list-item {
+        font-size: 1rem;
+    }
+    .nav-search-main {
+        padding-right: 1.375rem;
+    }
+    /* navbar bitti */    
+}
+@media only screen and (max-width: 992px) {
+    /* navbar başladı */
+    nav {
+        flex-direction: column;
+        font-size: 1.125rem;
+    }
+    .nav-mobile-view  {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        margin-top: -100%;
+        transform: translateX(-100%);
+        transition: 0.5s;
+    }
+    .nav-mobile-bottom {
+        flex-direction: column;
+        top: -100%; 
+    }
+    .nav-list-main {
+        background-color: var(--main-color);
+        order: 3;
+    }
+    .nav-list {
+        flex-direction: column;
+        padding: 3.125rem;
+        gap: 2.5rem;
+    }     
+    .nav-list-item {
+        font-size: 1.5;
+        padding-top: 0;
+        font-weight: 600;
+    }  
+    .nav-list-item:hover {
+        color: var(--text-mid);
+    }                 
+    .nav-search-main {
+        order: 2;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }            
+    .nav-search {
+        background-color: var(--bg-light);
+        border: none;
+        color: var(--bg-dark);
+        padding: 1.18rem;
+        border-radius: 0;
+    }
+    .form-control {
+        width: auto;
+        color: var(--bg-dark)
+    }
+    .nav-search:hover .form-control {
+        color: var(--bg-dark);
+    }
+    .form-control::placeholder {
+        color: var(--bg-dark);
+    }
+    .nav-search:hover .form-control::placeholder {
+        color: var(--bg-dark);
+    } 
+    .nav-toggle-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(0);
+        transition: 0.5s ease;      
+    }       
+    /*.nav-toggle-close {
+        transform: translateX(-100%);
+        transition: 200.5s ease;           
+    }   */     
+
+    /* navbar bitti */
+}
+        
+/* responsive bitti */
