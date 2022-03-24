@@ -29,7 +29,6 @@
             position: relative;   
             padding-bottom: 1rem;         
         }
-
         .about-text::after {
             width: 200px;
             background-color: var(--main-color);
@@ -50,6 +49,16 @@
             font-size: 30px;
             padding-bottom: 5px;
             position: relative;
+        }
+        .content-title::after {
+            width: 108px;
+            height: 3px;
+            border-radius: 10px;
+            background-color: var(--main-color);
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
         }
         .content-text {
             padding-top: 20px;
@@ -114,9 +123,9 @@
 </head>
 <body>
     <!-- navigation başladı -->
-    <nav class="w-100 d-flex justify-content-center">
+    <nav class="col-12 d-flex justify-content-center">
 
-        <div class="nav-mobile-top w-60 nav-desktop-view d-flex justify-content-between align-items-center order-1">
+        <div class="nav-desktop-view d-flex justify-content-between align-items-center order-1">
             <div class="nav-brand">
                 <img class="logo" src="assets/images/logo.png" alt="">
             </div>     
@@ -125,13 +134,13 @@
             </div>       
         </div>
 
-        <div class="nav-mobile-bottom w-100 nav-mobile-view d-flex justify-content-between align-items-center order-2" id="nav-mobile-view">
-            <div class="nav-mobile-top w-100 d-lg-none d-flex justify-content-between align-items-center order-2">
+        <div class="w-100 nav-mobile-view d-flex justify-content-between align-items-center order-2" id="nav-mobile-view">
+            <div class="nav-mobile-top d-flex justify-content-between align-items-center order-2" id="nav-mobile-top">
                 <div class="nav-brand">
                     <img class="logo" src="assets/images/logo.png" alt="">
                 </div>     
                 <div class="nav-toggle">
-                    <a href="#" onclick="toggleNav()" class="nav-toggle-btn"><img src="assets/icons/ic_close_48px.png" alt=""></a>
+                    <a href="#" onclick="toggleNav()" class="nav-toggle-btn navbar-btn-close" id="navbar-btn-close"><img src="assets/icons/ic_close_48px.png" alt=""></a>
                 </div>       
             </div>
             <div class="nav-list-main w-100">
@@ -222,16 +231,10 @@
         /* nav toggle düzenleme başladı */
 
         function toggleNav () {
-            var navBottom = document.getElementById('nav-mobile-view');
-            console.log('btn worx');
-            navBottom.classList.toggle('nav-toggle-close');
+            var navBottom = document.getElementById('nav-mobile-top');
+            navBottom.classList.toggle('toggle-nav');
+            /*navBottom.classList.toggle('col-12');*/
         }
-            /*if (navBottom.className.match("nav-mobile-view")) {
-                navBottom.classList.add("nav-toggle-open");
-            } else {
-                navBottom.classList.remove("nav-toggle-open");
-                navBottom.classList.add("nav-toggle-close")                
-            }*/
 
 
         /* nav toggle düzenleme bitti */

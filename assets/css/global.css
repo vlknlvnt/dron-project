@@ -24,6 +24,8 @@ nav {
     background-color: var(--bg-dark);
     height: auto;
     flex-direction: row;
+    padding-top: 1.938rem;
+    padding-bottom: 2.063rem;
 }
 
 .nav-mobile-top {
@@ -31,7 +33,9 @@ nav {
     padding-top: 1.938rem;
     padding-bottom: 2.063rem;    
     order: 1;
-    background-color: var(--bg-dark);        
+    background-color: var(--bg-dark);       
+    margin-top: -100%; 
+    transition: 0.5s;
 }
 
 .nav-desktop-view {
@@ -155,17 +159,14 @@ nav {
         font-size: 1.125rem;
     }
     .nav-mobile-view  {
+        flex-direction: column;        
         position: absolute;
-        top: 0;
+        top: 0;         
         right: 0;
         z-index: 99;
-        margin-top: -100%;
-        transform: translateX(-100%);
-        transition: 0.5s;
     }
-    .nav-mobile-bottom {
-        flex-direction: column;
-        top: -100%; 
+    .nav-mobile-top {
+        width: 100%;
     }
     .nav-list-main {
         background-color: var(--main-color);
@@ -210,18 +211,10 @@ nav {
     .nav-search:hover .form-control::placeholder {
         color: var(--bg-dark);
     } 
-    .nav-toggle-close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translateX(0);
-        transition: 0.5s ease;      
-    }       
-    /*.nav-toggle-close {
-        transform: translateX(-100%);
-        transition: 200.5s ease;           
-    }   */     
-
+    .toggle-nav {
+        margin-top: 0;
+        transition: 0.5s;    
+    }    
     /* navbar bitti */
 }
         
