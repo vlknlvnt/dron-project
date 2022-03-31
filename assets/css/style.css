@@ -1,5 +1,8 @@
-@import 'variables.css'; /* external root icin*/
-@import 'global.css';
+@import 'variables.css'; /* external root */
+@import 'global.css'; /* *css for global elements */
+@import 'flickity.min.css'; /* css for flickity */
+@import 'flickity.css';
+
 /*@charset "UTF-8";*/
 @font-face {
   font-family: Poppins-Light;

@@ -1,0 +1,61 @@
+  /* flickity on by default */
+  .carousel:after {
+    content: 'flickity';
+    display: none;
+  }
+
+  .carousel-cell {
+    height: 200px;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+  }
+    
+  @media (min-width: 992px) {
+    .carousel {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .carousel-cell {
+      visibility: visible;
+      width: 100%;
+    }        
+    /* disable Flickity for large devices */
+    .carousel:after {
+      content: '';
+    } 
+  }
+
+  @media (max-width: 992px) {
+    .carousel-cell {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 1s;
+    }  
+  }
+  
+  /* no margin bottom when Flickity enabled */
+  .flickity-enabled .carousel-cell {
+    margin-bottom: 0;
+  }
+  
+  /* cell number */
+  .carousel-cell:before {
+    display: block;
+    text-align: center;
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+  }
+
+  .is-selected {
+    visibility: visible;
+    background-size: 80%;
+    opacity: 1;
+  }
+
+  .flickity-button {
+    display: none;
+}  
+

@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dron-akademi</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,100&display=swap');
 
-        /* banner section başladı */
+        /* banner section starts */
         .banner {
             height: 31.25rem;
             background-image: url('assets/images/banner-bg.png');
@@ -18,18 +21,13 @@
             background-repeat: no-repeat;
         }
 
-        .about {
-            width: 23.375rem;
-            padding-bottom: 15px;
-        }
-
-        .about-text {
+        .banner h1 {
             font-size: 3.75rem;
             color: white;
             position: relative;   
             padding-bottom: 1rem;         
         }
-        .about-text::after {
+        .banner h1::after {
             width: 200px;
             background-color: var(--main-color);
             height: 10px;
@@ -39,9 +37,9 @@
             left: 5.5rem;
             bottom: 0;
         }
-        /* banner section bitti */
+        /* banner section ends */
 
-        /* content section başladı */
+        /* content section starts */
         .content-section {
             padding: 100px 0;
         }
@@ -57,19 +55,21 @@
             background-color: var(--main-color);
             content: "";
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
         }
         .content-text {
-            padding-top: 20px;
             font-size: 18px;
         }
         .content-bg {
             padding: 0 50px;
         }
+        .content-2 {
+            padding-left: 90px;
+        }
         .content-4 {
             position: relative;
-            margin-top: 106px;
+            margin-top: 7.5rem;
         }
         .image-1 {
             width: 100%;
@@ -83,140 +83,285 @@
         .cloud-1 {
             position: absolute;
             z-index: 1;
-            top: -160px;
-            left: -170px;
+            top: -90px;
+            left: -50px;
             width: 100%;
         }
         .cloud-2 {
-            width: 100%;
+            width: 60%;
             position: absolute;
-            right: -180px;
-            top: -30px;
-            z-index: 3;   
+            right: -80px;
+            top: 165px;
+            z-index: 3;  
         }
         .image-2 {
+            width: 100%;
+            left: 50%;
             position: relative;
-            height: 400px;
             z-index: 99;
-            margin-bottom: -230px;
-            transform: translateX(-4%);
+            margin-bottom: -240px;
+            transform: translateX(-50%);
+            z-index: 2;
         }
         .bg-1 {
             width: 655px;
             height: auto;
         }
-        .bg-1-inner {
+        .content-bg-1 {
             background-color: var(--main-color);
             height: 260px;            
         }
-        .bg-2 {
-            width: 655px;
-            height: auto;
-        }
-        .bg-2-inner {
+        .content-bg-2 {
             background-color: var(--main-color);
             height: 260px;
         }
-        /* content section bitti */
+        /* content section ends */
+
+        /* reference section starts */
+
+        .reference-section {
+            background-color: var(--bg-light);
+        }
+
+        .reference-title h4 {
+            font-size: 24px;
+        }
+
+        .reference-title h4::after {
+            width: 300px;
+            height: 3px;
+            border-radius: 10px;
+            background-color: var(--main-color);
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /*.reference-brands .carousel .carousel-cell {
+            transition: 0.5s;
+        }*/
+
+        .cell-afad {
+            background-image: url("assets/logo/afad_logo.png");
+        }
+        .cell-arcelik {
+            background-image: url("assets/logo/arcelik_logo.png");
+        }
+        .cell-aselsan {
+            background-image: url("assets/logo/aselsan_logo.png");
+        }
+        .cell-trt {
+            background-image: url("assets/logo/trt_logo.png");
+        }
+        .cell-thk {
+            background-image: url("assets/logo/thk_logo.png");
+        }
+        .cell-turkcell {
+            background-image: url("assets/logo/turkcell_logo.png");
+        }
+        .cell-enerjisa {
+            background-image: url("assets/logo/enerjisa_logo.png");
+        }
+        .cell-icisleri {
+            background-image: url("assets/logo/icisleri_logo.png");
+        }
+
+        .cell-afad:hover {
+            background-image: url("assets/logo/afad_logo_color.png");
+        }
+        .cell-arcelik:hover {
+            background-image: url("assets/logo/arcelik_logo_color.png");
+        }
+        .cell-aselsan:hover {
+            background-image: url("assets/logo/aseslan_logo_color.png");
+        }
+        .cell-trt:hover {
+            background-image: url("assets/logo/trt_logo_color.png");
+        }
+        .cell-thk:hover {
+            background-image: url("assets/logo/thk_logo_color.png");
+        }
+        .cell-turkcell:hover {
+            background-image: url("assets/logo/turkcell_logo_color.png");
+        }
+        .cell-enerjisa:hover {
+            background-image: url("assets/logo/enerjisa_logo_color.png");
+        }
+        .cell-icisleri:hover {
+            background-image: url("assets/logo/icisleri_logo_color.png");
+        }
+
+        .reference-button a {
+            background-color: var(--main-color);
+            color: #fff;
+            box-shadow: 1px 1px 15px 1px rgba(0,0,0,0.5);
+            transition: 0.3s;
+            border: 1px var(--main-color) solid;
+        }
+        
+        .reference-button a:hover {
+            color: var(--main-color);
+            background-color: #fff;
+            border: 1px var(--main-color) solid;
+        }
+
+        /* reference section ends */
+
+
+        /* media querry starts */
+        @media (max-width: 1399px) {
+
+        /* content section starts */
+            .content-bg-1 {
+                height: 200px;            
+            }
+            .content-bg-2 {
+                height: 200px;
+            }  
+            .image-2 {
+                margin-bottom: -200px;
+            } 
+        /* content section ends */        
+            
+        }
+
+        @media (max-width: 1199px) {
+
+        /* content section starts */
+            .image-1 {
+                margin-bottom: -180px;
+            }
+            .image-2 {
+                margin-bottom: -156px;
+            }
+        /* content section ends */        
+            
+        }
+
+        @media (max-width: 992px) {
+            
+            /* content section starts */
+            .content-bg-1, .content-bg-2 {
+                height: 263px;
+            }  
+            .image-1 {
+                margin-bottom: -240px;
+            }
+            .image-2 {
+                margin-bottom: -240px;
+            }
+            .content-section .container .row {
+                gap: 30px;
+            }
+            .content-2 {
+                padding-left: 15px;
+            }
+            .content-4 {
+                margin-top: 0;
+            }
+            .cloud-1 {
+                top: -90px;
+                left: -50px;
+                width: 100%;
+            }
+            .cloud-2 {
+                right: 0;
+                top: 180px;
+            }
+            /* content section ends */
+        }
+
+        /* media querry ends*/
 
     </style>
 </head>
 <body>
-    <!-- navigation başladı -->
-    <nav class="col-12 d-flex justify-content-center">
-
-        <div class="nav-desktop-view d-flex justify-content-between align-items-center order-1">
-            <div class="nav-brand">
-                <img class="logo" src="assets/images/logo.png" alt="">
-            </div>     
-            <div class="nav-toggle d-lg-none">
-                <a href="#" onclick="toggleNav()" class="nav-toggle-btn"><img src="assets/icons/ic_menu_48px.png" alt=""></a>
-            </div>       
-        </div>
-
-        <div class="w-100 nav-mobile-view d-flex justify-content-between align-items-center order-2" id="nav-mobile-view">
-            <div class="nav-mobile-top d-flex justify-content-between align-items-center order-2" id="nav-mobile-top">
-                <div class="nav-brand">
-                    <img class="logo" src="assets/images/logo.png" alt="">
-                </div>     
-                <div class="nav-toggle">
-                    <a href="#" onclick="toggleNav()" class="nav-toggle-btn navbar-btn-close" id="navbar-btn-close"><img src="assets/icons/ic_close_48px.png" alt=""></a>
-                </div>       
-            </div>
-            <div class="nav-list-main w-100">
-                    <ul class="nav-list d-flex flex-lg-row justify-content-right text-center">
-                        <li class="nav-list-item"><a href="">HAKKIMIZDA</a></li>
-                        <li class="nav-list-item"><a href="">EĞİTİMLERİMİZ</a></li>
-                        <li class="nav-list-item"><a href="">AKADEMİK KADRO</a></li>
-                        <li class="nav-list-item"><a href="">S.S.S</a></li>
-                        <li class="nav-list-item"><a href="">İLETİŞİM</a></li>
-                    </ul>
-            </div>
-            <div class="nav-search-main">
-                    <div class="nav-search input-group d-flex align-items-center">
-                        <img src="assets/images/zoom-2.png" alt=""> <input type="text" class="form-control text-center" aria-label="Arama" placeholder="Arama">
-                    </div>                
-            </div>
-            <div class="nav-social-media w-100 d-lg-none order-4">
-                <div class="social-media-icons d-flex flex-row justify-content-center">
-                    <div class="facebook-icon sm-icon"><a href=""><img src="assets/images/facebook.png" alt=""></a></div>
-                    <div class="instagram-icon sm-icon"><a href=""><img src="assets/images/instagram.png" alt=""></a></div>
-                    <div class="youtube-icon sm-icon"><a href=""><img src="assets/images/youtube.png" alt=""></a></div>
+    <!-- navigation starts -->
+    <nav>
+        <div class="container navbar-container d-lg-none" id="navbar-container">
+            <div class="navbar-mobile-view d-flex justify-content-between align-items-center ">
+                <div class="navbar-logo">
+                    <img src="assets/images/logo.png" alt="">
                 </div>
-                <div class="nav-contact d-flex flex-row justify-content-center">
-                    <img src="assets/images/phone.png" alt="">
-                    <p class="contact-number">0850 532 87 97</p>
+                <div class="navbar-toggle-icon">
+                    <a href="#" onclick="toggleNav()" class="nav-toggle-btn" id="nav-toggle-btn"><img src="assets/icons/toggle-open.png" alt=""></a>
                 </div>
-            </div>            
+            </div>
         </div>
+        <div class="navbar-toggle-container" id="navbar-toggle-container">
+            <div class="container navbar-mobile-view navbar-toggle-down d-flex justify-content-between align-items-center w-lg-auto">
+                <div class="navbar-logo">
+                    <img src="assets/images/logo.png" alt="">
+                </div>
+                <div class="navbar-toggle d-lg-none">
+                    <a href="#" onclick="toggleNav()" class="nav-toggle-btn" id="nav-toggle-btn"><img src="assets/icons/toggle-close.png" alt=""></a>
+                </div>                
+            </div>
+            <div class="navbar-body">
+                <input class="w-100 text-lg-center pl-3" type="text" name="search" placeholder="Arama" rel="search">
+                <div class="navbar-info">
+                    <div class="container py-3">
+                        <ul class="text-center">
+                            <li><a href="">HAKKIMIZDA</a></li>
+                            <li><a href="">EĞİTİMLERİMİZ</a></li>
+                            <li><a href="">AKADEMİK KADRO</a></li>
+                            <li><a href="">S.S.S</a></li>
+                            <li><a href="">İLETİŞİM</a></li>
+                        </ul>
+                    </div>
+                    <div class="w-100 py-2 d-lg-none order-4">
+                        <div class="social-media-icons d-flex flex-row justify-content-center">
+                            <div class="facebook-icon sm-icon"><a href=""><img src="assets/images/facebook.png" alt=""></a></div>
+                            <div class="instagram-icon sm-icon"><a href=""><img src="assets/images/instagram.png" alt=""></a></div>
+                            <div class="youtube-icon sm-icon"><a href=""><img src="assets/images/youtube.png" alt=""></a></div>
+                        </div>
+                        <div class="nav-contact d-flex flex-row justify-content-center">
+                            <img src="assets/icons/phone-nav.png" alt="">
+                            <p class="contact-number">0850 532 87 97</p>
+                        </div>
+                    </div>    
+                </div>                
+            </div>
 
+
+        </div>
     </nav>
-    <!-- navigation bitti -->
+    <!-- navigation ends -->
 
-    <!-- banner başladı -->
-    <section class="banner w-100 d-flex justify-content-center align-items-center flex-column">
-        <div class="about text-center">
-            <h1 class="about-text">Hakkımızda</h1>
-        </div>
+    <!-- banner starts -->
+    <section class="banner d-flex justify-content-center align-items-center">
+        <h1>Hakkımızda</h1>
     </section>
-    <!-- banner bitti -->
+    <!-- banner ends -->
 
-    <!-- content section başladı -->
+    <!-- content section starts -->
     <section class="content-section">
         <div class="container">
-            <div class="row">
-                <div class="content-1 col-lg-6 content-image-main">
-                    <div class="content-image-wrapper col-12" style="position: relative">
-                        <img class="content-image image-1" src="assets/images/drone-1.png" alt="">
-                        <img src="assets/images/cloud-1.png" alt="" class="cloud-1 cloud-img">
-                        <img src="assets/images/cloud-2.png" alt="" class="cloud-2 cloud-img">
-                    </div>
-                    <div class="content-bg bg-1 col-12">
-                        <div class="bg-1-inner w-100"></div>
-                    </div>    
+            <div class="row align-items-center">
+                <div class="content-1 col-lg-6">
+                    <img class="image-1" src="assets/images/drone-1.png" alt="">
+                    <img src="assets/images/cloud-1.png" alt="" class="cloud-1 cloud-img">
+                    <img src="assets/images/cloud-2.png" alt="" class="cloud-2 cloud-img">   
+                    <div class="content-bg-1 col-12">
+                    </div>                                      
                 </div>
-                <div class="content-2 col-lg-6 content-text-main">
-                    <div class="content-text-inner text-left col-12">
+                <div class="content-2 col-lg-6">
+                    <div class="content-text-inner col-12">
                         <h3 class="content-title">Başlık</h3>
-                        <p class="content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
+                        <p class="content-text pt-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. When an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                     </div>
                 </div>
-                <div class="content-3 col-lg-6 content-text-main">
-                    <div class="content-text-inner text-left col-12">
+                <div class="content-3 col-lg-6">
+                    <div class="content-text-inner col-12">
                         <h3 class="content-title">Başlık</h3>
-                        <p class="content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                        </p>
+                        <p class="content-text pt-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     </div>
                 </div>
                 <div class="content-4 col-lg-6">
-                    <div class="row">
-                        <div class="content-image-wrapper col-12">
-                            <img class="content-image image-2" src="assets/images/drone-2.png" alt="">
-                        </div>
-                        <div class="content-bg bg-2 col-12">
-                            <div class="bg-2-inner w-100"></div>
-                        </div>                        
+                        <img class="image-2" src="assets/images/drone-2.png" alt="">
+                        <div class="content-bg-2 col-12"></div>
                     </div>
 
                 </div>                
@@ -224,20 +369,112 @@
         </div>
 
     </section>
-    <!-- content section bitti -->
+    <!-- content section ends -->
+
+    <!-- references starts -->
+    <section class="reference-section py-4">
+        <div class="container">
+            <div class="reference-title text-center">
+                <h4 class="position-relative">Referanslarımız</h4>
+            </div>
+            <div class="reference-brands my-4">
+                <!-- Flickity HTML init -->
+                <div class="carousel pb-2" data-flickity='{ "watchCSS": true,"groupCells": 2 }'>
+                    <div class="carousel-cell col-3 cell-afad"></div>
+                    <div class="carousel-cell col-3 cell-arcelik"></div>
+                    <div class="carousel-cell col-3 cell-aselsan"></div>
+                    <div class="carousel-cell col-3 cell-trt"></div>
+                    <div class="carousel-cell col-3 cell-thk"></div>
+                    <div class="carousel-cell col-3 cell-turkcell"></div>
+                    <div class="carousel-cell col-3 cell-enerjisa"></div>
+                    <div class="carousel-cell col-3 cell-icisleri"></div>
+                </div>
+            </div>
+            <div class="reference-button text-center py-2">
+                <a class="py-1 px-2-5" href="">Tüm Referanslarımız</a>
+            </div>            
+        </div>
+
+    </section>
+    <!-- references endes -->
+
+    <!-- footer starts -->
+    <footer>
+        <div class="container py-2 py-lg-0 footer-top">
+            <div class="row">
+                <div class="col-12 col-lg-3 py-1 py-lg-4 footer-col-1">
+                    <img class="d-block" src="assets/images/logo.png" alt="">
+                    <div class="d-inline-block px-1 p-lg-0 mt-2 mr-1"><a href="#"><img src="assets/icons/facebook-footer.png" alt=""></a></div>
+                    <div class="d-inline-block px-1 p-lg-0 mt-2 mr-1"><a href="#"><img src="assets/icons/instagram-footer.png" alt=""></a></div>
+                    <div class="d-inline-block px-1 p-lg-0 mt-2 mr-1"><a href="#"><img src="assets/icons/youtube-footer.png" alt=""></a></div>
+                </div>
+                <div class="col-lg-3 py-1 py-lg-4 order-2">
+                    <h3 class="position-relative">Kurumsal</h3>
+                    <ul class="py-1">
+                        <li class="py-0-5"><p><a href="">Ana Sayfa</a></p></li>
+                        <li class="py-0-5"><p><a href="">Hakkımızda</a></p></li>
+                        <li class="py-0-5"><p><a href="">Dron Market</a></p></li>
+                        <li class="py-0-5"><p><a href="">Dron Blog</a></p></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 py-1 py-lg-4 order-3">
+                    <h3 class="position-relative">Akademi</h3>
+                    <ul class="py-1">
+                        <li class="py-0-5"><p><a href="">Eğitim Talebi</a></p></li>
+                        <li class="py-0-5"><p><a href="">Belge Sorgulama</a></p></li>
+                        <li class="py-0-5"><p><a href="">Eğitimlerimiz</a></p></li>
+                        <li class="py-0-5"><p><a href="">Akademik Kadro</a></p></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 py-1 py-lg-4 order-4">
+                    <h3 class="position-relative">İletişim</h3>
+                    <ul class="py-1">
+                        <li class="py-0-5 d-flex"><img src="assets/icons/phone-footer.png" alt=""><p class="pl-1">0850 532 87 97</p></li>
+                        <li class="py-0-5 d-flex"><img src="assets/icons/mail-footer.png" alt=""><p class="pl-1">destek@dronmarket.com</p></li>
+                        <li class="py-0-5 d-flex footer-list-location"><img src="assets/icons/location-footer.png" alt=""><address class="pl-1"><a href="https://goo.gl/maps/gQwydTj3vPgGdXEM7">Hasanpasa Mh <br>
+                            Uzuncayir Cad <br>
+                            Yapi Is Merkezi B1 Blok No:25 <br>
+                            İstanbul/Kadıköy</a></address>
+                        </li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
+        <div class="copyright text-center py-1-5">
+            <p>Copyright 2021 © Dronmarket. <br class="d-lg-none"> Tüm Hakları Saklıdır.</p>
+        </div>
+
+    </footer>
+    <!-- footer ends-->
 
     <script>
 
-        /* nav toggle düzenleme başladı */
-
+        /* nav toggle starts  */
         function toggleNav () {
-            var navBottom = document.getElementById('nav-mobile-top');
-            navBottom.classList.toggle('toggle-nav');
-            /*navBottom.classList.toggle('col-12');*/
+            var navContainerBottom = document.getElementById('navbar-toggle-container');
+            navContainerBottom.classList.toggle('toggle-nav');
+
+            var navContainerTop = document.getElementById('navbar-container');
+            navContainerTop.classList.toggle('navContainerTop-display');
+
         }
+        /* nav toggle ends */
 
+        /* flickity starts */
+        var elem = document.querySelector('.main-carousel');
+        var flkty = new Flickity( elem, {
+        // options
+        cellAlign: 'left',
+        contain: true,
+        });
 
-        /* nav toggle düzenleme bitti */
+        // element argument can be a selector string
+        //   for an individual element
+        var flkty = new Flickity( '.main-carousel', {
+        // options
+        });
+        /* flickity ends */
+
 
     </script>
 </body>
